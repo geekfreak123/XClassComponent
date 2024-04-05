@@ -1,10 +1,36 @@
-import "./styles.css";
+import React, { Component } from "react";
 
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+class CounterApp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+
+  incrementCount = () => {
+    this.setState((prevState) => ({
+      count: prevState.count + 1,
+    }));
+  };
+
+  decrementCount = () => {
+    this.setState((prevState) => ({
+      count: prevState.count - 1,
+    }));
+  };
+
+  render() {
+    const { count } = this.state;
+    return (
+      <div className="counter-container">
+        <h2>Counter App</h2>
+        <p>{count}</p>
+        <button onClick={this.incrementCount}>Increment</button>
+        <button onClick={this.decrementCount}>Decrement</button>
+      </div>
+    );
+  }
 }
+
+export default CounterApp;
