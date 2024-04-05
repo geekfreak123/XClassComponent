@@ -25,9 +25,11 @@ class CounterApp extends Component {
     return (
       <div className="counter-container">
         <h2>Counter App</h2>
-        <p>{count}</p>
-        <button onClick={this.incrementCount}>Increment</button>
-        <button onClick={this.decrementCount}>Decrement</button>
+        <div className="counter">
+          <p>{count}</p>
+          <button onClick={this.decrementCount}>Decrement</button>
+          <button onClick={this.incrementCount}>Increment</button>
+        </div>
       </div>
     );
   }
